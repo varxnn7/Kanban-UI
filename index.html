@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Kanban Board UI</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>Kanban Board</h1>
+
+        <button
+            id="addTaskBtn"
+        >
+            <i class="fas fa-plus"></i>
+            Add Task
+        </button>
+
+    </header>
+
+    <div class="board">
+
+        <!-- TO DO -->
+
+        <div
+            class="column"
+            data-column="todo"
+        >
+
+            <h2>
+                📝 To Do
+            </h2>
+
+            <div
+                class="task-list"
+                id="todo"
+            >
+
+                <div class="task">
+
+                    <h3>Design Homepage</h3>
+
+                    <p>Create the landing page UI.</p>
+
+                    <button class="delete-btn">
+                        Delete
+                    </button>
+
+                </div>
+
+                <div class="task">
+
+                    <h3>Research API</h3>
+
+                    <p>Find a suitable weather API.</p>
+
+                    <button class="delete-btn">
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- IN PROGRESS -->
+
+        <div
+            class="column"
+            data-column="progress"
+        >
+
+            <h2>
+                🚀 In Progress
+            </h2>
+
+            <div
+                class="task-list"
+                id="progress"
+            >
+
+                <div class="task">
+
+                    <h3>Build Login UI</h3>
+
+                    <p>Finish responsive layout.</p>
+
+                    <button class="delete-btn">
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DONE -->
+
+        <div
+            class="column"
+            data-column="done"
+        >
+
+            <h2>
+                ✅ Done
+            </h2>
+
+            <div
+                class="task-list"
+                id="done"
+            >
+
+                <div class="task">
+
+                    <h3>Setup Project</h3>
+
+                    <p>Folder structure completed.</p>
+
+                    <button class="delete-btn">
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+
+<div
+    class="modal"
+    id="taskModal"
+>
+
+    <div class="modal-content">
+
+        <h2>
+            Add New Task
+        </h2>
+
+        <input
+            type="text"
+            id="taskTitle"
+            placeholder="Task Title"
+        >
+
+        <textarea
+            id="taskDescription"
+            placeholder="Task Description"
+        ></textarea>
+
+        <select
+            id="taskColumn"
+        >
+
+            <option value="todo">
+                To Do
+            </option>
+
+            <option value="progress">
+                In Progress
+            </option>
+
+            <option value="done">
+                Done
+            </option>
+
+        </select>
+
+        <div class="buttons">
+
+            <button
+                id="saveTask"
+            >
+                Save
+            </button>
+
+            <button
+                id="closeModal"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
